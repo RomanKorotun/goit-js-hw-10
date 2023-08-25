@@ -40,7 +40,10 @@ function handlerChange(evt) {
       selectors.container.classList.remove('cat-info-hidden');
       selectors.container.innerHTML = createMarkupOptions(response);
     })
-    .catch(() => selectors.errorEl.classList.remove('error-hidden'))
+    .catch(() => {
+      selectors.errorEl.classList.remove('error-hidden');
+      selectors.container.innerHTML = '';
+    })
     .finally(() => selectors.loaderEl.classList.add('loader-hidden'));
 }
 
