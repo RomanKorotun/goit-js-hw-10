@@ -41,8 +41,8 @@ function handlerChange(evt) {
       selectors.container.innerHTML = createMarkupOptions(response);
     })
     .catch(() => {
-      selectors.errorEl.classList.remove('error-hidden');
       selectors.container.innerHTML = '';
+      selectors.errorEl.classList.remove('error-hidden');
     })
     .finally(() => selectors.loaderEl.classList.add('loader-hidden'));
 }
